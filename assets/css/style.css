@@ -1,0 +1,218 @@
+:root {
+    --primary-color: #59219E;
+    --primary-light-color: #CCBDE3;
+    --orange-color: #FA9C29;
+    --white-color: #FFFFFF;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    background-color: var(--white-color);
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.app-container {
+    max-width: 1480px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.app-header {
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.app-header__logo--image {
+    display: block;
+}
+
+/* header nav and actions */
+.app-header__nav-actions-wrapper {
+    max-width: 940px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.app-header__nav-actions-wrapper:target {
+    display: flex;
+    transition: 0.6s;
+    animation: show-menu 0.6s alternate ease-in-out;
+}
+
+.app-header__nav {
+    max-width: 550px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.app-header__nav--item {
+    position: relative;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.app-header__nav--item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-light-color);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.app-header__nav--item:hover:after {
+    bottom: -1px;
+    opacity: 1;
+}
+
+.app-header__actions--item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.app-header__actions--item .item-icon {
+    display: block;
+    min-width: 28px;
+    height: auto;
+    fill: var(--orange-color);
+}
+
+/* ===END=== header nav and actions */
+
+/* header right actions */
+.app-header__right-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.app-header__right-actions--item {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.app-header__right-actions--item.user-btn .user-btn--icon {
+    display: block;
+    fill: var(--orange-color);
+}
+
+
+/* header mobile-menu */
+.app-header__right-actions--item.mobile-menu-btn {
+    display: none;
+    position: relative;
+    width: 28px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.app-header__right-actions--item.mobile-menu-btn::after,
+.app-header__right-actions--item.mobile-menu-btn::before,
+.app-header__right-actions--item.mobile-menu-btn span {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-color);
+    transition: 0.4s;
+}
+
+.app-header__right-actions--item.mobile-menu-btn span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.app-header__right-actions--item.mobile-menu-btn::after {
+    top: 0;
+}
+
+.app-header__right-actions--item.mobile-menu-btn::before {
+    bottom: 0;
+}
+
+/* header mobile-menu:hover */
+.app-header__right-actions--item.mobile-menu-btn:hover span {
+    opacity: 0;
+    transform: scale(0) translateY(-50%);
+}
+
+.app-header__right-actions--item.mobile-menu-btn:hover::after {
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+}
+
+.app-header__right-actions--item.mobile-menu-btn:hover::before {
+    bottom: 50%;
+    transform: rotate(-45deg) translateY(50%);
+}
+/* ===END=== header right actions */
+
+
+@media (max-width: 950px) {
+    .app-container {
+        padding: 0 40px;
+    }
+
+    .app-header__nav-actions-wrapper {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        max-width: 100%;
+        align-items: flex-start;
+        background-color: var(--primary-light-color);
+        padding: 40px;
+    }
+
+    .app-header__actions--item {
+        max-width: 140px;
+        align-items: flex-start;
+    }
+
+    .app-header__right-actions--item.mobile-menu-btn {
+        display: flex;
+    }
+
+    .app-header__nav {
+        max-width: fit-content;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@keyframes show-menu {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

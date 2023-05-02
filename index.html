@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;800&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/style.css'>
+</head>
+
+<body>
+    <header class="app-header app-container">
+        <a href="#" class="app-header__logo">
+            <picture>
+                <source srcset="./assets/images/logo-small.svg" media="(max-width: 950px)" />
+                <img class="app-header__logo--image" src="./assets/images/logo.svg" alt="app logo">
+            </picture>
+        </a>
+
+        <div id="navActions" class="app-header__nav-actions-wrapper">
+            <nav class="app-header__nav">
+                <a class="app-header__nav--item" href="#">price</a>
+                <a class="app-header__nav--item" href="#">news</a>
+                <a class="app-header__nav--item" href="#">articles</a>
+                <a class="app-header__nav--item" href="#">about us</a>
+                <a class="app-header__nav--item" href="#">contacts</a>
+                <a class="app-header__nav--item" href="#">FAQ</a>
+            </nav>
+            <div class="app-header__actions">
+                <a class="app-header__actions--item" href="#">
+                    <svg class="item-icon" width="28" height="28">
+                        <use href="./assets/images/icons/icons-symbol.svg#money-icon" />
+                    </svg>
+                    <span>Earn Money Selling Accounts</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="app-header__right-actions">
+            <a href="#" class="app-header__right-actions--item user-btn">
+                <svg class="user-btn--icon" width="23" height="27">
+                    <use href="./assets/images/icons/icons-symbol.svg#user-icon" />
+                </svg>
+            </a>
+            <a href="#navActions" id="mobileMenu" class="app-header__right-actions--item mobile-menu-btn">
+                <span></span>
+            </a>
+        </div>
+    </header>
+</body>
+
+</html>
